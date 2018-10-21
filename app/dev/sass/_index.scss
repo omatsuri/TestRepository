@@ -1,0 +1,564 @@
+.main-visual {
+    width: 100vw;
+    height: 55rem;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+
+    li img {
+        width: 100%;
+        position: absolute;
+    }
+
+    .pc {
+        display: none !important;
+    }
+
+    .sp {
+        display: block !important;
+    }
+    // 画面サイズによって、キービジュアルの高さを設定
+    @media screen and (min-width: 768px) {
+        height: 50rem;
+
+        .pc {
+            display: block !important;
+        }
+
+        .sp {
+            display: none !important;
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        height: 70rem;
+    }
+    @media screen and (min-width: 1440px) {
+        height: 80rem;
+    }
+    @media screen and (min-width: 1920px) {
+        height: 100rem;
+    }
+    @media screen and (min-width: 2560px) {
+        height: 130rem;
+    }
+
+    .main-logo {
+        position: absolute;
+        // 50%だとアドレスバーが引っ込む祭崩れるため
+        top: 20rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1000;
+        @include query(1025) {
+            top: 50%;
+        }
+
+        img {
+            width: 5rem;
+        }
+    }
+
+    // scrolldown icon
+    #scrolldown {
+        bottom: 5rem;
+        height: 10rem;
+        margin-left: -5rem;
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        width: 10rem;
+        z-index: 100;
+    }
+
+    #scrolldown p {
+        font: 1rem 'Avenir',sans-serif;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-name: scroll;
+        color: #fff;
+    }
+
+    #scrolldown > p {
+        text-transform: uppercase;
+        text-indent: 0.3rem;
+    }
+
+    .mouse {
+        border: 0.2rem solid #fff;
+        border-radius: 1.3rem;
+        display: block;
+        height: 4.6rem;
+        left: 50%;
+        margin: 1rem 0 0 -1.3rem;
+        position: absolute;
+        width: 2.6rem;
+    }
+
+    .mouse span {
+        display: block;
+        font-size: 1.5em;
+        margin: 0.6rem auto;
+    }
+    @keyframes scroll {
+        0% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+    }
+}
+//concept
+
+.concept {
+    .message-wrapper {
+        background-color: #EAEAEA;
+    }
+
+    .message-text {
+        height: 20rem;
+        -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        margin: 0 auto;
+        line-height: 3rem;
+    }
+
+    &-photo {
+        margin: 0.5rem;
+
+        img {
+            width: 25rem;
+            @include query(1024) {
+                width: 40rem;
+                margin: 1rem;
+            }
+        }
+    }
+
+    .diamond {
+        color: #7BA879;
+    }
+}
+// スマホ、タブレット
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+    .featureLeft {
+        &-wrapper {
+            //画像を含む高さを取得するためラッパーで囲む
+            position: relative;
+        }
+
+        &-noArea {
+            //子要素のセンタリングのため親要素の領域を設定
+            width: 20%;
+            position: absolute;
+            float: left;
+            top: 0;
+            left: 0;
+            right: 80%;
+            bottom: 0;
+        }
+
+        &-no {
+            position: absolute;
+            // 縦書きのセンタリングに使用(x軸)
+            width: 1rem;
+            //縦書きのセンタリングに使用(x軸)
+            line-height: 1rem;
+            //縦書きのセンタリングに使用(y軸)
+            text-align: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+            -webkit-writing-mode: vertical-rl;
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+        }
+
+        &-image {
+            width: 80%;
+            //右寄せ
+            margin-left: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-title {
+            margin-left: 20%;
+        }
+
+        &-text {
+            margin-left: 20%;
+            margin-right: 3%;
+            line-height: 2.5rem;
+        }
+    }
+
+    .featureRight {
+        &-wrapper {
+            //画像を含む高さを取得するためラッパーで囲む
+            position: relative;
+        }
+
+        &-noArea {
+            //子要素のセンタリングのため親要素の領域を設定
+            width: 20%;
+            position: absolute;
+            float: right;
+            top: 0;
+            left: 80%;
+            right: 0;
+            bottom: 0;
+        }
+
+        &-no {
+            position: absolute;
+            // 縦書きのセンタリングに使用(x軸)
+            width: 1rem;
+            //縦書きのセンタリングに使用(x軸)
+            line-height: 1rem;
+            //縦書きのセンタリングに使用(y軸)
+            text-align: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+            -webkit-writing-mode: vertical-rl;
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+        }
+
+        &-image {
+            width: 80%;
+            //左寄せ
+            margin-right: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-title {
+            margin-right: 20%;
+            text-align: right;
+        }
+
+        &-text {
+            margin-left: 3%;
+            margin-right: 20%;
+            line-height: 2.5rem;
+        }
+    }
+}
+// PC(1024 <=)
+
+.kodawari-wrapper {
+    @extend %clearfix;
+    @media screen and (min-width: 1024px) {
+        margin: 12rem 2% 0;
+
+        .featureLeft,
+        .featureRight {
+            margin: 0 4.1%;
+            width: 25%;
+            float: left;
+
+            &-wrapper {}
+
+            &-noArea {
+                text-align: center;
+                margin: 0 0 3rem;
+            }
+
+            &-no {}
+
+            &-image {
+                img {
+                    width: 100%;
+                }
+            }
+
+            &-title {}
+
+            &-text {
+                line-height: 3rem;
+            }
+        }
+    }
+}
+//menu
+
+.menu {
+    h2 {
+        @include query(1024) {
+            margin-left: 10%;
+            text-align: left;
+        }
+    }
+}
+
+.menulist {
+    @include query(1024) {
+        margin-top: 10rem;
+        margin-left: 30%;
+    }
+
+    &-head {
+        width: 6rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-left: 5%;
+        @include query(1024) {
+            width: 8rem;
+            margin: 0 0 0.5rem;
+        }
+    }
+
+    &-table {
+        width: 90%;
+        margin: 0 5%;
+        text-align: left;
+        @include query(1024) {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    &-row {
+        //列の高さ
+        height: 2.5rem;
+        @include query(1024) {
+            height: 4rem;
+        }
+    }
+
+    &-col1 {
+        //カラム幅
+        width: 20rem;
+        @include query(1024) {
+            width: 40rem;
+        }
+    }
+
+    &-col2 {
+        //カラム幅(全体:90% - col1:70% = col2)
+    }
+
+    &-photos {
+        margin: 0 4%;
+        @include query(1024) {
+            width: 65vw;
+            margin-left: 0;
+        }
+    }
+
+    &-photo {
+        width: 94vw;
+        @include query(1024) {
+            width: 40vw;
+            margin-right: 4rem;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.service {
+    background-color: #EBEBEB;
+    @extend %clearfix;
+}
+
+.card {
+    background-color: #fff;
+    margin-left: 3%;
+    margin-right: 3%;
+    box-shadow: 0 0.1rem 0.8rem #999;
+    @include query(1024) {
+        width: 29%;
+        margin-left: 2%;
+        margin-right: 2%;
+        height: 60rem;
+        float: left;
+    }
+    @include query(1366) {
+        height: 70rem;
+    }
+    @include query(2200) {
+        height: 80rem;
+    }
+
+    &-image {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            transition-duration: 0.5s;
+
+            &:hover {
+                transform: scale(1.1);
+                transition-duration: 0.5s;
+            }
+        }
+    }
+
+    &-discription {
+        padding: 3rem;
+    }
+
+    &-text {
+        line-height: 2rem;
+        @include query(1024) {
+            line-height: 2.5rem;
+        }
+    }
+}
+//information
+
+.information {
+    &-wrapper {
+        background-image: url("../images/information-1.jpg");
+        // background-attachment: fixed; //画面からの相対位置（背景固定）
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 50rem;
+        @include query(1024) {
+            height: 60rem;
+            background-image: url("../images/information-2.jpg");
+        }
+
+        &::before {
+            /* 透過した黒を重ねる */
+            background-color: rgba(0,0,0,0.3);
+            /* どの範囲に重ねるかを指定 */
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: ' ';
+        }
+    }
+
+    &-contents {
+        width: 100%;
+        margin: 0 auto;
+        color: #FFF;
+        position: absolute;
+        left: 0;
+        right: 0;
+        @include query(1024) {
+            width: 40rem;
+        }
+    }
+
+    &-header {
+        text-align: center;
+    }
+
+    &-dTitle {
+        width: 40%;
+        float: left;
+        padding-right: 5rem;
+        text-align: right;
+    }
+
+    &-dData {
+        width: 60%;
+        margin-left: 40%;
+        margin-bottom: 2rem;
+    }
+}
+
+.map {
+    width: 100%;
+    height: 30rem;
+    @include query(1024) {
+        height: 40rem;
+    }
+}
+// slick
+
+.slick-slide {
+    outline: none;
+}
+// Dots
+
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.slick-dots li button:focus,
+.slick-dots li button:hover {
+    outline: none;
+}
+
+.slick-dots li button:focus:before,
+.slick-dots li button:hover:before {
+    opacity: 1;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '●';
+    text-align: center;
+    opacity: 0.25;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 0.75;
+    color: #B93C3C;
+}

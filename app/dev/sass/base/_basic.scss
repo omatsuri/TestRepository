@@ -1,0 +1,20 @@
+*{
+	box-sizing: border-box;
+}
+html{
+	font-size: 62.5%;
+	height: 100%;
+	font-family: 'fot-tsukuardgothic-std', -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+	color: #333;
+}
+body {
+	height:100%;
+	font-size: 1.2rem;
+	line-height: 1;
+	@include query(1024) {
+		font-size: 1.6rem;
+	}
+}
+.wrapper{
+  width: 100%;
+}

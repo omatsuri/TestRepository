@@ -1,0 +1,54 @@
+/*
+#overview
+heading
+
+*/
+
+/*
+#styleguide
+
+```
+<h1 class="heading-primary">heading</h1>
+<h2 class="heading-secondary">heading</h2>
+<h3 class="heading-thirdly">heading</h3>
+```
+*/
+
+.heading-primary {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.4rem;
+    text-align: center;
+    @include query(1024) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+
+.heading-secondary {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2rem;
+    @include query(1024) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+}
+
+.heading-thirdly {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: #fff;
+    background-color: #4A7B5A;
+    padding: 0.1rem 0.3rem;
+    @include query(1024) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+
+.heading-fourthly {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    color: #AAAAAA;
+}

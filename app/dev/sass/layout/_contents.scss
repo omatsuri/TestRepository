@@ -1,0 +1,8 @@
+.contents{
+    width: 100%;
+}
+.contents-inner{
+    // width: $size_max; //setting.scssに記述
+    margin: 0 auto;
+    @extend %clearfix;
+}
